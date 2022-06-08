@@ -265,7 +265,7 @@ function DropdownTab({className,children,classes}) {
 }
 function NavButton(props) {
     return (
-      <StyledLink exact={props.name==="Home"} to={props.link}>
+      <StyledLink exact={props.link==="/"} to={props.link}>
         {props.name} <LinkTabAnim className="child" />
       </StyledLink>
     )

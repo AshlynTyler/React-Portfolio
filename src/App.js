@@ -6,7 +6,9 @@ import {
 } from 'react-router-dom';
 import NavBar from "./components/NavBar";
 import './App.css';
-import useState from 'react';
+import {useState} from 'react';
+import PortfolioPage from './components/pages/PortfolioPage';
+import AboutPage from './components/pages/AboutPage';
 
 function App() {
   const[pages, setPages] = useState([
@@ -24,6 +26,15 @@ function App() {
   return (
     <Router>
       <NavBar pages={pages} />
+      <Switch>
+        <Route path='/about'>
+          <AboutPage />
+        </Route>
+        
+        <Route exact path='/'>
+          <PortfolioPage />
+        </Route>
+      </Switch>
     </Router>
   );
 }
