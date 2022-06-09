@@ -14,6 +14,7 @@ const StyledLink = styled(NavLink)`
   font-size: 1.2rem;
   padding: 10px;
   padding-top: 5px;
+  text-decoration: none;
   @media only screen and (min-width: 1280px){
     min-width: 170px;
     font-size: 2.5rem;
@@ -275,7 +276,7 @@ function NavBar(props) {
   const size = useWindowSize();
 
   return (
-    <div className="flex flex-row h-10 xl:h-20 border-b-2 mt-3 pl-1 border-primary pr-1 xl:pr-10">
+    <div className="navbar">
       {(size.width > 570) ? (
         <React.Fragment>
           {props.pages.map((data) => {
