@@ -233,6 +233,14 @@ const StyledDropDown = styled.div`
 
 `;
 
+const TouchTrigger = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+`
+
 function DropdownTab({className,children,classes}) {
   const wrapperRef = useRef(null);
   const [mobileActive, setMobileActive] = useState("");
@@ -251,7 +259,7 @@ function DropdownTab({className,children,classes}) {
   
   return(
       <div ref={wrapperRef} className={className + " " + classes + " " + mobileActive}>
-        <div onTouchStart={handleTouch} className="absolute w-full h-full bottom-0 left-0"/>
+        <TouchTrigger onTouchStart={handleTouch} />
         <LinkTabAnim className="child" />
         {(classes === "menu") ? (
           <>
@@ -266,7 +274,7 @@ function DropdownTab({className,children,classes}) {
 }
 function NavButton(props) {
     return (
-      <StyledLink exact={props.link==="/"} to={props.link}>
+      <StyledLink exact={(props.path==='/').toString()} to={props.link}>
         {props.name} <LinkTabAnim className="child" />
       </StyledLink>
     )
@@ -290,7 +298,7 @@ function NavBar(props) {
           {props.pages.map((data) => {
               return (
                 <div className="w-full" key={data.name}>
-                  <StyledLinkDropdown exact={data.name==="Home"}  to={data.path}>
+                  <StyledLinkDropdown exact={(data.path==='/').toString()}  to={data.path}>
                     {data.name}
                   </StyledLinkDropdown>
                 </div>

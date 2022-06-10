@@ -1,6 +1,6 @@
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Redirect
 } from 'react-router-dom';
@@ -26,15 +26,11 @@ function App() {
   return (
     <Router>
       <NavBar pages={pages} />
-      <Switch>
-        <Route path='/about'>
-          <AboutPage />
-        </Route>
+      <Routes>
+        <Route path='/about' element={<AboutPage />}/>
         
-        <Route exact path='/'>
-          <PortfolioPage />
-        </Route>
-      </Switch>
+        <Route path='/' element={<PortfolioPage />}/>
+      </Routes>
     </Router>
   );
 }
