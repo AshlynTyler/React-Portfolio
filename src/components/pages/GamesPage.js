@@ -1,9 +1,9 @@
 
 
-function PortfolioPage(){
+function GamesPage(){
     return(<div>
         This is the Portfolio!
     </div>)
 }
 
-export default PortfolioPage;
+export default GamesPage;

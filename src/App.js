@@ -7,15 +7,15 @@ import {
 import NavBar from "./components/NavBar";
 import './App.css';
 import {useState} from 'react';
-import PortfolioPage from './components/pages/PortfolioPage';
+import ProjectsPage from './components/pages/ProjectsPage';
 import AboutPage from './components/pages/AboutPage';
 
 function App() {
   const[pages, setPages] = useState([
     {
-      name: 'Portfolio',
+      name: 'Projects',
       path: '/',
-      component: <PortfolioPage />
+      component: <ProjectsPage />
     },
     {
       name: 'About',
@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route path='/about' element={<AboutPage />}/>
         
-        <Route path='/' element={<PortfolioPage />}/>
+        <Route path='/' element={<ProjectsPage />}/>
       </Routes>
     </Router>
   );
